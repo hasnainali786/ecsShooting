@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using CnControls;
-
 public class PlayerMovementAndLook : MonoBehaviour
 {
     public static PlayerMovementAndLook obj;
@@ -111,19 +110,18 @@ public class PlayerMovementAndLook : MonoBehaviour
 
         Transform nearest = null;
 
-        Collider[] cols = Physics.OverlapSphere(transform.position, 8);
-
+        Collider[] cols = Physics.OverlapSphere(transform.position, 18);
         foreach (Collider hitt in cols)
         {
 
-            if (hitt.name == "Cube")
+            if (hitt.tag == "Enemy")
             {
 
                 float dist = Vector3.Distance(transform.position, hitt.transform.position);
                 
                 if (dist <= 7)
                 {
-                    Debug.LogError(" in range");
+                    Debug.Log(" in range");
                     minDist = dist;
                     nearest = hitt.transform;
                     isInRange = true;
@@ -137,12 +135,8 @@ public class PlayerMovementAndLook : MonoBehaviour
                 else
                 {
                     isInRange=false;
-                    Debug.LogError("not in range");
+                    //Debug.LogError("not in range");
                 }
-
-                //transform.LookAt(new Vector3(nearest.transform.position.x,0,nearest.transform.position.z));
-
-                //isInRange=true;
             }
             else
             {
