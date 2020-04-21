@@ -14,7 +14,7 @@ public class PlayerShooting : MonoBehaviour
 	public AudioSource shotAudio;
 	public float fireRate = .1f;
 	public int spreadAmount = 20;
-	bool fires;
+
 	[Header("Bullets")]
 	public GameObject bulletPrefab;
 
@@ -37,7 +37,7 @@ public class PlayerShooting : MonoBehaviour
 	{
 		timer += Time.deltaTime;
 
-		if ((fires || Input.GetButton("Fire1")) && timer >= fireRate)
+		if (/*Input.GetButton("Fire1")*/ PlayerMovementAndLook.obj.isInRange && timer >= fireRate)
 		{
 			Vector3 rotation = gunBarrel.rotation.eulerAngles;
 			rotation.x = 0f;
@@ -132,14 +132,6 @@ public class PlayerShooting : MonoBehaviour
 			}
 		}
 		bullets.Dispose();
-	}
-    public void firing()
-    {
-		fires = true;
-    }
-	public void firingUp()
-	{
-		fires = false;
 	}
 }
 
