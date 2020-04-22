@@ -5,6 +5,7 @@ using Unity.Jobs;
 using Unity.Mathematics;
 using Unity.Transforms;
 
+
 [UpdateAfter(typeof(MoveForwardSystem))]
 [UpdateBefore(typeof(TimedDestroySystem))]
 public class CollisionSystem : JobComponentSystem
@@ -34,9 +35,10 @@ public class CollisionSystem : JobComponentSystem
 
 		public void Execute(ArchetypeChunk chunk, int chunkIndex, int firstEntityIndex)
 		{
+			
 			var chunkHealths = chunk.GetNativeArray(healthType);
 			var chunkTranslations = chunk.GetNativeArray(translationType);
-
+			
 			for (int i = 0; i < chunk.Count; i++)
 			{
 				float damage = 0f;
@@ -49,7 +51,16 @@ public class CollisionSystem : JobComponentSystem
 
 					if (CheckCollision(pos.Value, pos2.Value, radius))
 					{
+						
 						damage += 1;
+					}
+					if (CheckCollision(pos.Value, pos2.Value, 38))
+					{
+						AimingTowardsEnemy.instance.isInRange = true;
+						float3 playerToMouse = pos2.Value - pos.Value;
+						playerToMouse.y = 0;
+						quaternion newRotation = quaternion.LookRotation(pos.Value, pos2.Value);
+						AimingTowardsEnemy.instance.newRotation = newRotation;
 					}
 				}
 
@@ -64,6 +75,7 @@ public class CollisionSystem : JobComponentSystem
 
 	protected override JobHandle OnUpdate(JobHandle inputDependencies)
 	{
+		
 		var healthType = GetArchetypeChunkComponentType<Health>(false);
 		var translationType = GetArchetypeChunkComponentType<Translation>(true);
 

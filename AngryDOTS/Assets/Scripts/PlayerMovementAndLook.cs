@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using CnControls;
+using Unity.Entities;
+
 
 public class PlayerMovementAndLook : MonoBehaviour
 {
@@ -72,13 +74,9 @@ public class PlayerMovementAndLook : MonoBehaviour
 
         //Why not just pass the vector instead of breaking it up only to remake it on the other side?
         MoveThePlayer(movementVector);
-        //  TurnThePlayer();
+         // TurnThePlayer();
        
         AnimateThePlayer(movementVector);
-
-        /*
-		 * cnc
-		 */
 
 
 
@@ -94,28 +92,15 @@ public class PlayerMovementAndLook : MonoBehaviour
 
     void TurnThePlayer()
     {
-        // Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        // RaycastHit hit;
-
-        // if (Physics.Raycast(ray, out hit, whatIsGround))
-        // {
-        //     Vector3 playerToMouse = hit.point - transform.position;
-        //     playerToMouse.y = 0f;
-        //     playerToMouse.Normalize();
-
-        //     Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
-        //     playerRigidbody.MoveRotation(newRotation);
-        // }
-
-        // new code
         float minDist = Mathf.Infinity;
 
         Transform nearest = null;
 
         Collider[] cols = Physics.OverlapSphere(transform.position, 8);
+        
         foreach (Collider hitt in cols)
         {
-
+            print(hitt.tag);
             if (hitt.tag == "Enemy")
             {
 
@@ -177,7 +162,7 @@ public class PlayerMovementAndLook : MonoBehaviour
             return;
 
         playerHealth--;
-
+        print("ecs is tough");
         if (playerHealth <= 0)
         {
             Settings.PlayerDied();

@@ -6,6 +6,7 @@ public class RemoveDeadSystem : ComponentSystem
 {
 	protected override void OnUpdate()
 	{
+		
 		Entities.ForEach((Entity entity, ref Health health, ref Translation pos) =>
 		{
 			if (health.Value <= 0)

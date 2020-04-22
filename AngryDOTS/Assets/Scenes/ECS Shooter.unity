@@ -178,7 +178,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 220979866}
-  m_LocalRotation: {x: 0.1724005, y: 0.8273177, z: -0.38972023, w: 0.3659805}
+  m_LocalRotation: {x: 0.17240047, y: 0.8273177, z: -0.38972023, w: 0.36598045}
   m_LocalPosition: {x: -8.740326, y: 5.072219, z: 4.5449085}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -434,7 +434,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &573832065
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1186,7 +1186,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1496275636}
-  m_LocalRotation: {x: 0.1724005, y: 0.8273177, z: -0.38972023, w: 0.3659805}
+  m_LocalRotation: {x: 0.17240047, y: 0.8273177, z: -0.38972023, w: 0.36598045}
   m_LocalPosition: {x: -8.740326, y: 5.072219, z: 4.5449085}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1409,7 +1409,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1904467121
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1502,6 +1502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ae2e2bc953342c5b57276dbaf19a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInRange: 0
 --- !u!1 &2145770715
 GameObject:
   m_ObjectHideFlags: 0
@@ -1660,6 +1661,21 @@ PrefabInstance:
     - target: {fileID: 7782605245937804037, guid: 387be402c6e254edb8f04a699355f406,
         type: 3}
       propertyPath: spreadShot
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7782605245937804037, guid: 387be402c6e254edb8f04a699355f406,
+        type: 3}
+      propertyPath: useECS
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7782605246255474744, guid: 387be402c6e254edb8f04a699355f406,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7782605246255474745, guid: 387be402c6e254edb8f04a699355f406,
+        type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7782605246255474749, guid: 387be402c6e254edb8f04a699355f406,

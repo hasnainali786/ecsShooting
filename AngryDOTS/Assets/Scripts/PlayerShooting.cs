@@ -37,7 +37,7 @@ public class PlayerShooting : MonoBehaviour
 	{
 		timer += Time.deltaTime;
 
-		if (/*Input.GetButton("Fire1")*/ PlayerMovementAndLook.obj.isInRange && timer >= fireRate)
+		if (/*Input.GetButton("Fire1")*/ AimingTowardsEnemy.instance.isInRange  && timer >= fireRate)
 		{
 			Vector3 rotation = gunBarrel.rotation.eulerAngles;
 			rotation.x = 0f;
