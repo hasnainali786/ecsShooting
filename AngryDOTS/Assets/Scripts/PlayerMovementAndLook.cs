@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using CnControls;
+
 public class PlayerMovementAndLook : MonoBehaviour
 {
     public static PlayerMovementAndLook obj;
@@ -71,7 +72,8 @@ public class PlayerMovementAndLook : MonoBehaviour
 
         //Why not just pass the vector instead of breaking it up only to remake it on the other side?
         MoveThePlayer(movementVector);
-        TurnThePlayer();
+        //  TurnThePlayer();
+       
         AnimateThePlayer(movementVector);
 
         /*
@@ -110,7 +112,7 @@ public class PlayerMovementAndLook : MonoBehaviour
 
         Transform nearest = null;
 
-        Collider[] cols = Physics.OverlapSphere(transform.position, 18);
+        Collider[] cols = Physics.OverlapSphere(transform.position, 8);
         foreach (Collider hitt in cols)
         {
 

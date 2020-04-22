@@ -50,7 +50,6 @@ public class EnemyBehaviour : MonoBehaviour, IConvertGameObjectToEntity
 	{
 		manager.AddComponent(entity, typeof(EnemyTag));
 		manager.AddComponent(entity, typeof(MoveForward));
-
 		MoveSpeed moveSpeed = new MoveSpeed { Value = speed };
 		manager.AddComponentData(entity, moveSpeed);
 
