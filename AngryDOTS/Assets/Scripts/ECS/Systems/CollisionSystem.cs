@@ -4,7 +4,7 @@ using Unity.Entities;
 using Unity.Jobs;
 using Unity.Mathematics;
 using Unity.Transforms;
-
+using UnityEngine;
 
 [UpdateAfter(typeof(MoveForwardSystem))]
 [UpdateBefore(typeof(TimedDestroySystem))]
@@ -58,9 +58,12 @@ public class CollisionSystem : JobComponentSystem
 					{
 						AimingTowardsEnemy.instance.isInRange = true;
 						float3 playerToMouse = pos2.Value - pos.Value;
-						float3 up = new float3(0.0f, 0.0f, 0.0f);
-						playerToMouse.y = 0;
-						quaternion newRotation = quaternion.LookRotation(playerToMouse, pos2.Value);
+                      
+						float3 up = new float3(0.0f, 0.0f, 0.1f);
+						Debug.Log(pos.Value);
+						//playerToMouse.y = 0;
+						Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
+						//quaternion newRotation = quaternion.LookRotation(playerToMouse, pos2.Value);
 						AimingTowardsEnemy.instance.newRotation = newRotation;
 					}
 				}
