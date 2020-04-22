@@ -16,7 +16,8 @@ public class AimingTowardsEnemy : MonoBehaviour
     }
 		public void AimDetection()
 	{
-		BuildPhysicsWorld bpw = World.Active.DefaultGameObjectInjectionWorld.GetExistingSystem<BuildPhysicsWorld>();
+		//BuildPhysicsWorld bpw = World.Active.DefaultGameObjectInjectionWorld.GetExistingSystem<BuildPhysicsWorld>();
+		//World.Active.DefaultGameObjectInjectionWorld.GetExistingSystem<BuildPhysicsWorld>();
 	}
 	
 }
