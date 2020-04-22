@@ -40,13 +40,13 @@ public class AimingTowardsEnemy : MonoBehaviour
                 
         //        if (dist <= 7)
         //        {
-                    Debug.Log(" in range");
+//                    Debug.Log(" in range");
               //      minDist = dist;
               //      nearest = hitt.transform;
-                    isInRange = true;
+                 //   isInRange = true;
         //  Vector3 playerToMouse = nearest.transform.position - transform.position;
-         playerToMouse.y = 0f;
-         playerToMouse.Normalize();
+         //playerToMouse.y = 0f;
+        // playerToMouse.Normalize();
                     // nearest.y = 0f;
                     // nearest.Normalize();
                     // Quaternion newRotation = Quaternion.LookRotation(nearest);
