@@ -44,7 +44,7 @@ public class CollisionSystem : JobComponentSystem
 				float damage = 0f;
 				Health health = chunkHealths[i];
 				Translation pos = chunkTranslations[i];
-
+  
 				for (int j = 0; j < transToTestAgainst.Length; j++)
 				{
 					Translation pos2 = transToTestAgainst[j];
