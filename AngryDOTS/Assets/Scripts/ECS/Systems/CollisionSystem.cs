@@ -61,7 +61,7 @@ public class CollisionSystem : JobComponentSystem
                       
 						float3 up = new float3(0.0f, 0.0f, 0.1f);
 						Debug.Log(pos.Value);
-						//playerToMouse.y = 0;
+						playerToMouse.y = 0;
 						Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
 						//quaternion newRotation = quaternion.LookRotation(playerToMouse, pos2.Value);
 						AimingTowardsEnemy.instance.newRotation = newRotation;
