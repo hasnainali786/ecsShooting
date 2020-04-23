@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Collections;
 using Unity.Entities;
 
 
 public class AimingTowardsEnemy : MonoBehaviour
 {
-    public static AimingTowardsEnemy instance;
+    [ReadOnly] public static AimingTowardsEnemy instance;
     public bool isInRange = false;
     public Quaternion newRotation;
     void Awake()
@@ -21,7 +22,7 @@ public class AimingTowardsEnemy : MonoBehaviour
 
     public void AimDetection()
 	{
-         GetComponent<Rigidbody>().MoveRotation(newRotation);   
+        transform.rotation = Quaternion.Lerp(transform.rotation,newRotation,0.15f); 
 	}
 	
 }
